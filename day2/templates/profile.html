@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }}</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body>
+<div>Hello {{ name }} </div>
+
+<img src="{{ url_for('static', filename='good-morning.png') }}">
+<!--<div>-->
+    <!--<select>-->
+    <!--<option>Cutco</option>-->
+    <!--<option>Home</option>-->
+    <!--<option>Cottage</option>-->
+    <!--</select>-->
+<!--</div>-->
+<button id="zip">Zip</button>
+<p id="my-zip">14760</p>
+<form action="/changeColor" method="post">
+    <input type="color" name="color">
+</form>
+</body>
+</html>
