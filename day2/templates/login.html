@@ -1,0 +1,30 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Login </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+<div class="container">
+    {% if errors %}
+        <small class="form-text text-monospace text-uppercase text-danger">
+            {{ errors }}</small>
+    {% endif %}
+    <h1>Login</h1>
+    <form method="post">
+        User Name: <input type="text" name="username" class="form-control">
+        Password: <input type="password" name="password" class="form-control">
+        <input type="submit" value="Login" class="btn btn-primary">
+    </form>
+</div>
+</body>
+</html>

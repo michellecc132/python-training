@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+<a class="btn btn-danger" href="/logout">Logout</a>
+<h1>Supply Form</h1>
+<div class="container">
+    <form action="/addSupply" method="post">
+        <div class="form-group">
+            <label for="my-type">Supply type:</label>
+            <input type="text" name="supply_name"
+                   class="form-control" value=""
+                   id="my-type"
+                   aria-describedby="emailHelp"
+                   placeholder="Type">
+        {% if errors and errors['supply_name'] %}
+            <small class="form-text text-monospace text-uppercase text-danger"> {{ errors['supply_name'] }}</small>
+        {% endif %}
+        </div>
+
+
+        <div class="form-group">
+            <label for="my-brand">Supply brand: </label>
+            <input type="text" name="supply_brand"
+                   id="my-brand" class="form-control" value="">
+
+            {% if errors and errors['supply_brand'] %}
+            <small class="form-text text-monospace text-uppercase text-danger">{{ errors['supply_brand'] }}</small>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="my-supplier">Supplier ID: </label>
+            <input type="number" name="supplier-id"
+                   id="my-supplier" class="form-control" value="">
+
+            {% if errors and errors['supplier'] %}
+                <small class="form-text text-monospace text-uppercase text-danger">{{ errors['supplier'] }}</small>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="cost">Cost: </label>
+            <input type="number" name="cost"
+                   id="cost" class="form-control" value="0.00">
+
+            {% if errors and errors['cost'] %}
+                <small class="form-text text-monospace text-uppercase text-danger">{{ errors['cost'] }}</small>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="type-select">Supply type:</label>
+            <select class="form-control" name="supply-type" id="type-select">
+                {% for supply_type in supply_types %}
+                    <option value="{{ supply_type[0] }}">{{ supply_type[1] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group form-check">
+            <input type="radio" name="in-stock" value="I" class="form-check-input" id="in">
+            <label for="in" class="form-check-label"> In Stock</label>
+        </div>
+        <div class="form-group form-check">
+            <input type="radio" name="in-stock" value="O" class="form-check-input" id="out">
+            <label for="out" class="form-check-label"> Out of Stock</label>
+        </div>
+        <!--<br>-->
+        <!--Month? <input type="month" name="month"><br>-->
+        <input type="color" name="color" class="form-control"><br>
+        <!--<input type="datetime-local" name="local">-->
+        <!--<input type="email" name="email">-->
+        <!--<input type="reset">-->
+        <!--<input type="time" name="time">-->
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+
+    <!--<div class="jumbotron">-->
+        <!--<h1 class="display-4">Hello, world!</h1>-->
+        <!--<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to-->
+            <!--featured content or information.</p>-->
+        <!--<hr class="my-4">-->
+        <!--<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>-->
+        <!--<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>-->
+    <!--</div>-->
+</div>
+</div>
+<div>
+    <p style="background-color : {{ color }}">{{ conclusion }}</p>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+</html>

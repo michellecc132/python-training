@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing</title>
+    <link rel="stylesheet" href="static\style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script src="static\main.js"></script>
+</head>
+<body>
+{% for row in rows %}
+<div>{{ row }}</div>
+{% endfor %}
+<h3 id="greeting">
+    Good morning {% if name %} {{ name }} {% endif %}
+</h3>
+<hr>
+<div>
+    Today is a
+</div>
+<div class="experiment">
+    nice day
+</div>
+{% if name %}
+<a href="http://127.0.0.1:9105/user/{{ name }}">User Profile</a>
+{% endif %}
+<ul>
+    <li> Item 1</li>
+    <li> Item 2</li>
+</ul>
+<a href="https://www.google.com" target="_blank" class="experiment">A link to Google</a>
+
+<hr>
+<button id="hider">Click Me</button>
+<div class="experiment">
+    hdsajlf;kdjaklgjkl hgdsl ;aghsdgn jgsdk laghiowajhekla fjd klahgdklshg
+    lf k;laf djsalksg hgkagh wio rthohnkc jnvk a;jriotu klfn nlc;kja
+    ioewphqtkl;jfjdk ;safj ;g kl;ahglak;hgkldsajg kgj klahgklds agda
+</div>
+
+<p class="strongblue">This is the <a><strong>second</strong></a> sentence.</p>
+
+</body>
+</html>
