@@ -8,6 +8,7 @@ itool = iToolKit()
 conn = ibm_db_dbi.connect()
 itransport = DatabaseTransport(conn)
 
+# My new change
 itool.add(iCmd('rtvjoba', 'RTVJOBA USRLIBL(?) SYSLIBL(?) CCSID(?N) OUTQ(?)'))
 itool.call(itransport)
 rtvjoba = itool.dict_out('rtvjoba')
